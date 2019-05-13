@@ -11,4 +11,16 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  # index
+  get '/dishes' do
+    @dishes = Dish.all.sort_by { |dish| dish.price }
+    erb :'dishes/index'
+  end
+
+  #show
+  get '/dishes/:id' do
+    @dish = Dish.find(params[:id])
+    erb :'dishes/show'
+  end
+
 end

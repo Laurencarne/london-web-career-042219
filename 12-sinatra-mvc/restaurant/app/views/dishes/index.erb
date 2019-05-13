@@ -1,0 +1,11 @@
+<h2>all the dishes</h2>
+
+<ul>
+  <% @dishes.each do |dish| %>
+    <li>
+      <a href="/dishes/<%= dish.id %>">
+        <%= dish.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
