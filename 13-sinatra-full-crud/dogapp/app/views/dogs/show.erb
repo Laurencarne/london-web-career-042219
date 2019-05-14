@@ -1,0 +1,12 @@
+<h2> <%= @dog.name %> </h2>
+
+<p> This dog is <%= @dog.age %> years old</p>
+<p>
+  To edit <%= @dog.name %>, click
+  
+  <a href="/dogs/<%= @dog.id %>/edit">
+    here
+  </a>  
+</p>
+
+<a href="/dogs">go back to se all dogs</a>

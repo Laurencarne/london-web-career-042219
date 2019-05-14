@@ -11,15 +11,15 @@
 
 ## #RESTful routing for our resource: the DOG
 
-| Name | Path | HTTP Verb | Purpose |
-| --- | --- | --- | --- |
-| Index | /dogs | GET | List all dogs |
-| New  | /dogs/new | GET | Show new dog *form* |
-| Create | /dogs | POST | Create a new dog, then redirect  |
-| Show | /dogs/:id | GET | Show info about ONE specific dog |
-| Edit | /dogs/:id/edit | GET | Show edit *form* for one dog |
-| Update | /dogs/:id | PUT | Update a particular dog, redirect |
-| Destroy | /dogs/:id | DELETE | Delete a particular dog, then redirect |
+| Name    | Path           | HTTP Verb | Purpose                                |
+| ------- | -------------- | --------- | -------------------------------------- |
+| Index   | /dogs          | GET       | List all dogs                          |
+| New     | /dogs/new      | GET       | Show new dog _form_                    |
+| Create  | /dogs          | POST      | Create a new dog, then redirect        |
+| Show    | /dogs/:id      | GET       | Show info about ONE specific dog       |
+| Edit    | /dogs/:id/edit | GET       | Show edit _form_ for one dog           |
+| Update  | /dogs/:id      | PUT       | Update a particular dog, redirect      |
+| Destroy | /dogs/:id      | DELETE    | Delete a particular dog, then redirect |
 
 ## Flow
 
@@ -72,7 +72,6 @@ class DogsContorller < ApplicationController
 end
 ```
 
-
 ```ruby
 # config.ru
 use DogController
@@ -82,6 +81,7 @@ use DogController
 - https://loremflickr.com/
 
 CREATE
+
 ```ruby
   get "/dogs/new" do
     erb :"dogs/new"
@@ -94,6 +94,7 @@ CREATE
 ```
 
 CREATE FORM
+
 ```html
 <h1>Create new Dog</h1>
 
@@ -113,11 +114,13 @@ CREATE FORM
 ```
 
 ### Caveat on PATCH and DELETE
+
 - What kind of requests are browsers able to do by default?
 - in config.ru `use Rack::MethodOverride`
 - Why? [Here's the Link](https://stackoverflow.com/questions/165779/are-the-put-delete-head-etc-methods-available-in-most-web-browsers)
 
 UPDATE
+
 ```ruby
   get "/dogs/:id/edit" do
     @dog = Dog.find(params[:id])
@@ -132,6 +135,7 @@ UPDATE
 ```
 
 EDIT FORM
+
 ```html
 <h1>Edit Dog</h1>
 
@@ -157,6 +161,7 @@ EDIT FORM
 ```
 
 DELETE
+
 ```ruby
   delete "/dogs/:id" do
     dog = Dog.find(params[:id])
