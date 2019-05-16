@@ -1,0 +1,30 @@
+<h2> <%= @dog.name %> </h2>
+
+<p> This dog is <%= @dog.age %> years old</p>
+<p> The person picking up its 💩 is <%= @dog.owner.name %></p>
+
+<% if @dog.toys.size > 0 %>
+  <h3>Toys that this 🐕 owns:</h3>
+
+  <ul>
+    <% @dog.toys.each do |toy| %>
+      <li>
+        <%= toy.name %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+    <h3>That 🐕 has no toys to play with ;(</h3>
+<% end %>
+
+<br>
+
+<p>
+  To edit <%= @dog.name %>, click
+  
+  <a href="/dogs/<%= @dog.id %>/edit">
+    here
+  </a>  
+</p>
+
+<a href="/dogs">go back to se all dogs</a>
