@@ -3,25 +3,24 @@
 What's different?
 
 - Making a model
-the old way: 3 steps
-the new way: `rails g model ????`
+  the old way: 3 steps
+  the new way: `rails g model ????`
 
 - Routing
-the old way: route in your controller
-the new way: `routes.rb`
+  the old way: route in your controller
+  the new way: `routes.rb`
 
 - View naming
-the old way: `*.erb`
-the new way: `*.html.erb`
+  the old way: `*.erb`
+  the new way: `*.html.erb`
 
 - Links on pages
-the old way: annoying <a> tags
-the new way: `link_to`
+  the old way: annoying <a> tags
+  the new way: `link_to`
 
 - Path helpers
-the old way: there are none
-the new way: `rails/rake routes`
-
+  the old way: there are none
+  the new way: `rails/rake routes`
 
 ## ---
 
@@ -36,6 +35,7 @@ the new way: `rails/rake routes`
 - `byebug`
 - `rails g model <Model_name> name:string price:float number:integer`
 - old way of routing: in the controller. new way: controller holds methods that get referred from `routes`
+
 ```ruby
 class TrainsController < ApplicationController
 
@@ -48,7 +48,9 @@ class TrainsController < ApplicationController
   end
 end
 ```
+
 - `html.erb`
+
 ```ruby
 <h1><%= @train.name %></h1>
 
@@ -67,6 +69,7 @@ end
   <% end %>
 </ul>
 ```
+
 - `template rendering only when needed, its implicit`
 - `DHH`, `rework`, `37signals` and `basecamp`
 - `get /"trains", to: "trains#index"`
@@ -79,6 +82,7 @@ end
 - `to 'trans#show', as: 'train'
 - `rails routes` `app.train_path(1)`
 - `guides.rubyonrails.org`
+
 ```ruby
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -89,4 +93,5 @@ Rails.application.routes.draw do
   resources :trains, only: [:index, :show]
 end
 ```
+
 - `resources :trains, only: [:index, :show]`
