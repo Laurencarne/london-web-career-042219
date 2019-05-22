@@ -1,0 +1,12 @@
+<%= form_for @cupcake do |f|  %>
+  <% if request.path == '/cupcakes/new' %>
+    <%= f.label :name %>
+    <%= f.text_field :name  %>
+  <% end %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+    <%= f.label :eater_id %>
+    <%= f.collection_select :eater_id, @eaters, :id, :name %>
+  <%= f.submit %>
+<% end %>
