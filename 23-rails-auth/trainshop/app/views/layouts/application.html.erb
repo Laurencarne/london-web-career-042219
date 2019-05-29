@@ -10,6 +10,17 @@
   </head>
 
   <body>
+
+
+    <% if logged_in?  %>
+      <p>
+        hello, <%= current_user.username %>!
+      </p>
+      <%= link_to "logout", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to "login", login_path %>
+    <% end %>
+
     <h1>
       <%= link_to 'Trainshop 🛤', trains_path %>
     </h1>

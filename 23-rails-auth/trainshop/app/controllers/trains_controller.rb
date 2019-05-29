@@ -1,6 +1,8 @@
 class TrainsController < ApplicationController
   before_action :find_train, only: [:edit, :show, :update, :destroy]
   before_action :find_conductors, only: [:new, :edit, :create, :update]
+  before_action :authorized?
+  skip_before_action :authorized?, only: [:index]
 
   def index
     @trains = Train.all
