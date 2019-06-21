@@ -65,20 +65,21 @@ renderAllUserCards = users => {
 
 // ----------------------------------------------------------------------------
 
-const getUsers = () =>
-  fetch("http://localhost:3000/users")
-    .then(d => d.json())
-    .then(users => {
-      renderAllUserCards(users);
-    });
+// const getUsers = () =>
+//   fetch("http://localhost:3000/users")
+//     .then(d => d.json())
+//     .then(users => {
+//       renderAllUserCards(users);
+//     });
 
 // ----------------------------------------------------------------------------
 
-// const getUsers = async () => {
-//   const userData = await fetch("http://localhost:3000/users");
-//   const userDataJSON = await userData.json();
-//   renderAllUserCards(userDataJSON);
-// };
+const getUsers = async () => {
+  const userData = await fetch("http://localhost:3000/users");
+  const userDataJSON = await userData.json();
+  debugger;
+  renderAllUserCards(userDataJSON);
+};
 
 // ----------------------------------------------------------------------------
 // what about when there is no more users?
@@ -96,15 +97,15 @@ const getUsers = () =>
 
 // // async-await version
 
-// const getUsers = async () => {
-//   const data = await fetch("http://localhost:3000/users");
-//   const dataJSON = await data.json();
-//   if (dataJSON.length < 1) {
-//     const userCardInstance = new UserCard({});
-//     userCardInstance.renderNoUsersMessage();
-//   } else {
-//     renderAllUserCards(dataJSON);
-//   }
-// };
+const getUsers = async () => {
+  const data = await fetch("http://localhost:3000/users");
+  const dataJSON = await data.json();
+  if (dataJSON.length < 1) {
+    const userCardInstance = new UserCard({});
+    userCardInstance.renderNoUsersMessage();
+  } else {
+    renderAllUserCards(dataJSON);
+  }
+};
 
 getUsers();
