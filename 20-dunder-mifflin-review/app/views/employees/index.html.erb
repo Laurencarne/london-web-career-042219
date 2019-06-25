@@ -1,0 +1,10 @@
+<h1>All the Employees!</h1>
+  <% @employees.each do |employee| %>
+  <h3><%= employee.first_name + " " + employee.last_name %></h3>
+  <p>Alias: <%= employee.alias %></p>
+  <p>Title: <%= employee.title %></p>
+  <p>Office: <%= employee.office %></p>
+  <p>Dog: <%= employee.dog.name %></p>
+  <p> Picture: <br>
+  <img src=<%= employee.img_url %> height=300></p>
+  <% end %>

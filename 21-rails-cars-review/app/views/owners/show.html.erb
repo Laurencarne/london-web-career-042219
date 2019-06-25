@@ -1,0 +1,4 @@
+<h2><%= @owner.name %></h2>
+<% @owner.cars.each do |car| %>
+    <p><%= car.brand.name %> serviced by <%= link_to car.mechanic.name, car.mechanic %></p>
+<% end %>

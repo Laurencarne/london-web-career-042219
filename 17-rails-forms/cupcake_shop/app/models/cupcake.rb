@@ -1,0 +1,2 @@
+class Cupcake < ApplicationRecord
+end

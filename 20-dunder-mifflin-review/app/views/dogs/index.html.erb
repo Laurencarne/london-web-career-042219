@@ -1,0 +1,6 @@
+<h1>All the Dogs!</h1>
+  <% @dogs.each do |dog| %>
+  <h3><%= dog.name %></h3>
+  <p>Breed: <%= dog.breed %></p>
+  <p>Age: <%= dog.age %></p>
+  <% end %>

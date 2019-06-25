@@ -1,0 +1,5 @@
+<h1>Cars</h1>
+
+<% @cars.each do |car| %>
+    <p><%= car.brand.name %> owned by <%= car.owner.name %></p>
+<% end %>
