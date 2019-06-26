@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
-import Paintings from "./painting_data";
+import paintings from "./painting_data";
 import PaintingList from "./components/PaintingList";
 
-console.log(Paintings);
+console.log(paintings);
 
 function App() {
   return (
     <div className="App">
-      <PaintingList paintings={Paintings} />
+      <PaintingList paintings={paintings} />
     </div>
   );
 }

@@ -3,8 +3,7 @@ import Painting from "./Painting";
 
 class PaintingList extends React.Component {
   state = {
-    searchTerm: "",
-    searchActive: false
+    searchTerm: ""
   };
 
   filterPaintings = (paintings, searchTerm) =>
@@ -33,9 +32,11 @@ class PaintingList extends React.Component {
         <div className="search-field">
           <input
             type="text"
-            onChange={event =>
-              this.setState({ searchTerm: event.target.value })
-            }
+            onChange={event => {
+              this.setState({ searchTerm: event.target.value }, () =>
+                console.log(this.state.searchTerm)
+              );
+            }}
           />
         </div>
         {this.renderPaintings(filteredPaintings)}
