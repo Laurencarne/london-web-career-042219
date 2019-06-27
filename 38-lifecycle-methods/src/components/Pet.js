@@ -1,6 +1,30 @@
 import React from "react";
 
 class Pet extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(
+      this.props.pet.name,
+      this.__proto__.constructor.name,
+      "constructed"
+    );
+  }
+  componentDidMount() {
+    console.log(
+      this.props.pet.name,
+      this.__proto__.constructor.name,
+      "mounting"
+    );
+  }
+
+  componentDidUpdate() {
+    console.log(
+      this.props.pet.name,
+      this.__proto__.constructor.name,
+      "did update"
+    );
+  }
+
   adoptionButton = pet => {
     if (pet.isAdopted) {
       return <button className="ui disabled button">Already adopted</button>;
@@ -17,15 +41,12 @@ class Pet extends React.Component {
   };
 
   render() {
-    const {
-      age,
-      name,
-      weight,
-      gender,
-      type,
-      isAdopted,
-      onAdoptPet
-    } = this.props.pet;
+    console.log(
+      this.props.pet.name,
+      this.__proto__.constructor.name,
+      "rendered"
+    );
+    const { age, name, weight, gender, type } = this.props.pet;
     return (
       <div className="card">
         <div className="content">

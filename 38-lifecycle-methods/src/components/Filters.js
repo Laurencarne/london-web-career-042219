@@ -1,7 +1,21 @@
 import React from "react";
 
 class Filters extends React.Component {
+  componentDidMount() {
+    console.log(this.__proto__.constructor.name, "mounting");
+  }
+
+  componentDidUpdate() {
+    console.log(this.__proto__.constructor.name, "updated");
+  }
+
+  constructor(props) {
+    super(props);
+    console.log(this.__proto__.constructor.name, "constructed");
+  }
   render() {
+    console.log(this.__proto__.constructor.name, "rendered");
+
     return (
       <div className="ui form">
         <h3>Animal type</h3>
