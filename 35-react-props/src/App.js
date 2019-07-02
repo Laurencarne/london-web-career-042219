@@ -1,10 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Paintings from './painting_data'
-import PaintingList from './components/PaintingList'
+import React from "react";
+import "./App.css";
+import Paintings from "./painting_data";
+import PaintingList from "./components/PaintingList";
 
-console.log(Paintings)
+console.log(Paintings);
 
 function App() {
   return (
