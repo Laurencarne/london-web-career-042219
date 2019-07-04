@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.details-container {
+  height: 255px
+}
+
+.image-container {
+  height: 255px
+}
+
+.options-bar {
+  margin: 20px 0px;
+}
+
+.option-buttons {
+  margin: 5px 10px;
+  padding: 5px;
+  background-color: pink;
+  color: white;
+}
