@@ -14,7 +14,7 @@ class AuthController < ApplicationController
     if logged_in
       render json: current_user
     else 
-      render json: {error: "You dun goofed!"}
+      render json: {error: "Incorrect token."}
     end
   end
 end
